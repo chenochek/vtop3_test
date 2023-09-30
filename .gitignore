@@ -10,7 +10,7 @@
 
 # production
 /build
-.idea/a
+.idea/
 package-lock.json
 
 
