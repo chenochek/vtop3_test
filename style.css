@@ -9,6 +9,26 @@
 }
 
 /*
+Medium
+*/
+
+@font-face {
+    font-family: 'Lexend';
+    src: url(assets/fonts/static/Lexend-Medium.ttf);
+    font-weight: 500;
+}
+
+/*
+SemiBold
+ */
+
+@font-face {
+    font-family: 'Lexend';
+    src: url(assets/fonts/static/Lexend-SemiBold.ttf);
+    font-weight: 600;
+}
+
+/*
 Variables
  */
 :root {
@@ -16,9 +36,6 @@ Variables
     --border-color: #478BF9;
     --button-border-color: #9DADF2;
 }
-
-
-
 
 html {
     box-sizing: border-box;
@@ -31,19 +48,19 @@ html {
     box-sizing: inherit;
 }
 
-
 body {
-     margin: 0;
+    margin: 0;
     font-family: Lexend, serif;
-     font-size: 16px;
+    font-size: 16px;
     color: var(--font-color-primary);
-     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
- }
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 body {
-    background: rgb(18,13,35);
-    background: linear-gradient(273deg, rgba(18,13,35,1) 0%, rgba(39,45,81,1) 99%);
+    background: rgb(18, 13, 35);
+    background: linear-gradient(273deg, rgba(18, 13, 35, 1) 0%, rgba(39, 45, 81, 1) 99%);
+
 }
 
 a {
@@ -57,7 +74,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display:flex;
+    display: flex;
 }
 
 .nav {
@@ -68,7 +85,7 @@ ul {
 .button {
     border-radius: 24px;
     padding: 14px;
-    border: 2px solid var( --button-border-color);
+    border: 2px solid var(--button-border-color);
     text-transform: uppercase;
     cursor: pointer;
     color: var(--font-color-primary);
@@ -79,7 +96,7 @@ ul {
 }
 
 .button--primary:hover {
-    opacity:80%;
+    opacity: 80%;
 }
 
 .button--secondary {
@@ -99,10 +116,16 @@ ul {
     display: none;
 }
 
+.h1 {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
 /*
 Header
 */
-
 
 .header {
     margin: 16px 140px auto;
@@ -141,7 +164,7 @@ Header
 
 .modal {
     width: 100%;
-    background: linear-gradient(273deg, rgba(18,13,35,1) 0%, rgba(39,45,81,1) 99%);
+    background: linear-gradient(273deg, rgba(18, 13, 35, 1) 0%, rgba(39, 45, 81, 1) 99%);
     border: 2px solid transparent;
     box-sizing: content-box;
     margin: 0;
@@ -149,19 +172,73 @@ Header
 
 }
 
-.modal::backdrop{
+.modal::backdrop {
     width: 100%;
     height: 100%;
     background-color: transparent;
 }
 
+/*
+Main
+*/
 
-.invisible {
-    display: none;
+.main {
+    margin: 8px 140px auto;
+    display: flex;
+    gap: 42px;
+    flex-wrap: wrap;
+
 }
 
+/*
+Content
+ */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    max-width: 670px;
+}
+
+.content__heading {
+    color: var(--font-color-primary);
+    margin: 0 0 16px;
+}
+
+.content__heading--blue {
+    color: var(--border-color);
+}
+
+.content__text {
+    color: #FFFFFF99;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0 0 40px;
+}
+
+.content__button {
+    border-radius: 48px;
+    padding: 20px 72px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.33;
+    text-align: center;
+    width: fit-content;
+}
 
 @media (max-width: 1180px) {
+
+    .h1 {
+        font-size: 2.875rem;
+        line-height: 1.087;
+    }
+
+    /*
+    Header
+     */
     .desktop {
         display: none;
     }
@@ -169,9 +246,10 @@ Header
     .mobile {
         display: block;
     }
+
     .header {
         padding: 10px 14px 10px 14px;
-        margin:10px;
+        margin: 10px;
         border-width: 2px;
         min-width: 250px;
     }
@@ -241,6 +319,37 @@ Header
     .header__actions--second .header__button {
         width: 100%;
         padding: 13px 20px;
+    }
+
+    /*
+    Main
+     */
+    .main {
+
+        padding: 60px 10px;
+        margin: 10px;
+        border-width: 2px;
+        min-width: 250px;
+    }
+
+    .content__heading {
+        margin: 0 0 12px;
+        text-align: center;
+    }
+
+
+    .content__text {
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin: 0px 0px 16px;
+        text-align: center;
+    }
+
+    .content__button {
+        padding: 15px 20px;
+        font-size: 1.125rem;
+        line-height: 1.25;
+        width: 100%;
     }
 }
 
