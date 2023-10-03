@@ -1,0 +1,248 @@
+/*
+Шрифты
+ */
+
+/* Обычный */
+@font-face {
+    font-family: 'Lexend';
+    src: url(assets/fonts/static/Lexend-Regular.ttf);
+}
+
+/*
+Variables
+ */
+:root {
+    --font-color-primary: #FFFFFF;
+    --border-color: #478BF9;
+    --button-border-color: #9DADF2;
+}
+
+
+
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+body {
+     margin: 0;
+    font-family: Lexend, serif;
+     font-size: 16px;
+    color: var(--font-color-primary);
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+ }
+
+body {
+    background: rgb(18,13,35);
+    background: linear-gradient(273deg, rgba(18,13,35,1) 0%, rgba(39,45,81,1) 99%);
+}
+
+a {
+    color: var(--font-color-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
+}
+
+.nav {
+    display: flex;
+    padding: 8px;
+}
+
+.button {
+    border-radius: 24px;
+    padding: 14px;
+    border: 2px solid var( --button-border-color);
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--font-color-primary);
+}
+
+.button--primary {
+    background-color: transparent;
+}
+
+.button--primary:hover {
+    opacity:80%;
+}
+
+.button--secondary {
+    background-color: var(--border-color);
+    border-color: var(--border-color);
+}
+
+.button--secondary:hover {
+    background-color: transparent;
+}
+
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+/*
+Header
+*/
+
+
+.header {
+    margin: 16px 140px auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border: 4px solid var(--border-color);
+    border-radius: 64px;
+    padding: 24px 48px 24px 48px;
+    position: relative;
+
+}
+
+.header__nav {
+    margin: auto;
+}
+
+.header__actions {
+    display: flex;
+    gap: 8px;
+}
+
+.header__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.header__button--lang {
+    display: flex;
+    gap: 8px;
+}
+
+.menu {
+    gap: 32px;
+}
+
+.modal {
+    width: 100%;
+    background: linear-gradient(273deg, rgba(18,13,35,1) 0%, rgba(39,45,81,1) 99%);
+    border: 2px solid transparent;
+    box-sizing: content-box;
+    margin: 0;
+    height: 100vh;
+
+}
+
+.modal::backdrop{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+
+.invisible {
+    display: none;
+}
+
+
+@media (max-width: 1180px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+    .header {
+        padding: 10px 14px 10px 14px;
+        margin:10px;
+        border-width: 2px;
+        min-width: 250px;
+    }
+
+    .header__button {
+        padding: 8px;
+        border-width: 2px;
+    }
+
+    .header__icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .modal .menu {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .header__button--menu,
+    .header__button--close {
+        padding: 4px;
+        border: none;
+    }
+
+    .header__icon--menu,
+    .header__icon--close {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+    }
+
+    .modal .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .modal .menu__point {
+        width: 100%;
+        border-radius: 28px;
+        border: 2px solid var(--border-color);
+        padding: 13px 20px;
+
+    }
+
+    .modal .header__actions--first {
+        width: 100%;
+        border-radius: 64px;
+        border: 2px solid var(--border-color);
+        padding: 10px 14px;
+        margin-bottom: 22px;
+        box-sizing: border-box;
+        justify-content: flex-end;
+    }
+
+    .modal .header__actions--second {
+        margin-top: 22px;
+        box-sizing: border-box;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .header__actions--second .header__button {
+        width: 100%;
+        padding: 13px 20px;
+    }
+}
+
+
+
