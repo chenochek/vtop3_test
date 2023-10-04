@@ -128,7 +128,7 @@ Header
 */
 
 .header {
-    margin: 16px 140px auto;
+    margin: 16px auto auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -136,6 +136,7 @@ Header
     border-radius: 64px;
     padding: 24px 48px 24px 48px;
     position: relative;
+    max-width: 1640px;
 
 }
 
@@ -187,6 +188,8 @@ Main
     display: flex;
     gap: 42px;
     flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1640px;
 
 }
 
@@ -228,6 +231,79 @@ Content
     text-align: center;
     width: fit-content;
 }
+
+/*
+Animation
+ */
+
+@keyframes infinite_vertical_movement{
+
+    from {
+        top: -10%;
+    }
+    to {
+        top: 110%;
+    }
+}
+
+
+
+
+
+/*
+decoration
+ */
+
+
+
+.decoration {
+    display: flex;
+    gap:16px;
+}
+
+.chips {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+
+.chip {
+    width: 99px;
+    height: 99px;
+    position: relative;
+}
+
+.chips__item {
+    animation-name: infinite_vertical_movement;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(20000, end);
+    animation-delay: -2.5s;
+    animation-fill-mode: backwards;
+}
+
+
+.chips--reverse .chip {
+    animation-direction: reverse;
+}
+
+.chip--long {
+    height: 220px;
+}
+
+.chips--first {
+    opacity: 20%;
+}
+
+.chips--second {
+    opacity: 60%;
+}
+
+.chips--thirth {
+    opacity: 40%;
+}
+
 
 @media (max-width: 1180px) {
 
@@ -330,6 +406,9 @@ Content
         margin: 10px;
         border-width: 2px;
         min-width: 250px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
     }
 
     .content__heading {
@@ -350,6 +429,44 @@ Content
         font-size: 1.125rem;
         line-height: 1.25;
         width: 100%;
+    }
+
+    .decoration {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .chips {
+        flex-direction: row;
+        gap: 12px;
+        max-height: 49px;
+    }
+
+    .chip {
+        width: 49px;
+        height: 49px;
+    }
+
+    .chip--long {
+        height: 109px;
+        transform: translateY(-28%) rotate(90deg);
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+
+    @keyframes infinite_horizontal_movement{
+
+        from {
+            left: -100%;
+        }
+        to {
+            left: 100%;
+        }
+    }
+
+    .chips__item {
+        animation-name: infinite_horizontal_movement;
+        animation-duration: 3s;
     }
 }
 
